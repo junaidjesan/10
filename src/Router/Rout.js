@@ -3,6 +3,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import Blogs from '../Components/Blogs/Blogs';
 import Courses from '../Components/Courses/Courses';
 import Faq from '../Components/Faq/Faq';
+import Details from '../Components/Pages/Details';
+import Enroll from '../Components/Pages/Enroll';
 import Home from '../Components/Pages/Home';
 import Layouts from '../Layouts/Layouts';
 
@@ -29,6 +31,14 @@ export const webrouter=createBrowserRouter([
                 element:<Courses></Courses>,
                 loader:()=>fetch('http://localhost:5000/all-categories')
             },
+            {
+                path:'/course-details',
+                element:<Details></Details>
+            },
+            {
+                path:'/enrolled',
+                element:<Enroll></Enroll>
+            }
         ]
     }
 ])

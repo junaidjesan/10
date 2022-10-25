@@ -1,23 +1,44 @@
 import React from 'react';
+import { BsStarFill, BsStarHalf } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 const CourseCart = ({ data }) => {
     const { name, published_date } = data.author
-    const { thumbnail_url, title, enrolled, details } = data
+    const { image_url, title, enrolled, details } = data
     const { number, badge } = data.rating
     console.log(data)
     return (
-        <div>
+        <div className='grid justify-center my-5'>
             <div className="card w-96 bg-base-100 shadow-xl">
-                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                <figure><img className='w-96 h-56' src={image_url} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
-                        Shoes!
-                        <div className="badge badge-secondary">NEW</div>
+                        {name}
+                        <div className="badge border-none  bg-pink-700">{badge}</div>
                     </h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
+                    <h1 className='text-pink-400 '>{title}</h1>
+                    <p>{details.slice(0, 200)}...</p>
+                    <div className='mt-2'>
+                        <div className='flex gap-2'>
+                            <h1 className=' '> {number}</h1>
+                            <div className='flex my-1 text-pink-800'>
+                                <BsStarFill />
+                                <BsStarFill />
+                                <BsStarFill />
+                                <BsStarFill />
+                                <BsStarHalf />
+                            </div>
+                        </div>
+                        <div>
+                            <h1>Enrolled- {enrolled}</h1>
+                        </div>
+                        <div>
+                            <h1>Publish Date- {published_date}</h1>
+                        </div>
+                    </div>
+                    <div className="card-actions justify-end mt-1">
+                        <Link to='/course-details'><div className="badge badge-outline">Details</div></Link>
+                        <Link to='/enrolled'><div className="badge badge-outline">Enroll Now</div></Link>
                     </div>
                 </div>
             </div>
