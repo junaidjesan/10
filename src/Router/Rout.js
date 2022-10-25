@@ -7,6 +7,7 @@ import Details from '../Components/Pages/Details';
 import Enroll from '../Components/Pages/Enroll';
 import Home from '../Components/Pages/Home';
 import Layouts from '../Layouts/Layouts';
+import Rout404 from './Rout404';
 
 export const webrouter=createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const webrouter=createBrowserRouter([
                 element:<Enroll></Enroll>
             }
         ]
+    },
+    {
+        path:'*',
+        element:<Rout404></Rout404>
     }
 ])
 

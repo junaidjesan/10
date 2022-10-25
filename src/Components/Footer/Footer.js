@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ImFacebook, ImGoogle3, ImTwitter } from 'react-icons/im'
 
 const Footer = () => {
     return (
@@ -33,10 +34,10 @@ const Footer = () => {
                 </footer>
                 <div className='px-10 bg-pink-200 text-base-content grid place-content-center'>
                     <div className='flex gap-3'>
-                        <Link>google</Link>
-                        <Link>facebook</Link>
-                        <Link>twitter</Link>
-                        </div>
+                        <a href="https://www.google.com/"><ImGoogle3 /></a>
+                        <a href="https://www.facebook.com/"><ImFacebook /></a>
+                        <a href="https://www.twitter.com/"><ImTwitter /></a>
+                    </div>
                     <h1 className='grid place-content-center'>follow us</h1>
                 </div>
             </div>
