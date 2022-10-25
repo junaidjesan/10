@@ -13,19 +13,19 @@ const Header = () => {
                         </label>
                     </div>
                     <img className='h-10 rounded w-10' src="https://w7.pngwing.com/pngs/171/678/png-transparent-marwadi-university-mechanical-engineering-computer-icons-civil-engineering-engineer-people-laboratory-engineering-thumbnail.png" alt="" />
-                    <span className=" text-3xl italic oldstyle-nums font-semibold"><Link to='/'>Engineer's School</Link></span>
+                    <span className=" text-3xl text-pink-800 italic oldstyle-nums font-semibold"><Link to='/'>Engineer's School</Link></span>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                        <li><Link to='/courses' className='hover:border-b-slate-600'>Courses</Link></li>
-                        <li><Link to='/blogs' className='hover:border-b-slate-600'>FAQ</Link></li>
-                        <li><Link to='/faq-questions' className='hover:border-b-slate-600'>Blogs</Link></li>
+                        <li><Link to='/courses' className='text-pink-500 hover:border-b-slate-600'>Courses</Link></li>
+                        <li><Link to='/blogs' className='text-pink-500 hover:border-b-slate-600'>FAQ</Link></li>
+                        <li><Link to='/faq-questions' className='text-pink-500 hover:border-b-slate-600'>Blogs</Link></li>
                         
                     </ul>
                 </div>
                 <div className="navbar-end gap-5">
-                    <BiFace className='h-8 w-8' />
-                    <button><Link to='/register'>Register</Link></button>
+                    <BiFace className='h-8 w-8 text-pink-900' />
+                    <button className='text-pink-700'><Link to='/register'>Register</Link></button>
                 </div>
             </div>
         </div>
