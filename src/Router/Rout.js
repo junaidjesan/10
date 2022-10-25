@@ -1,8 +1,8 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import Blogs from '../Components/Pages/Blogs';
-import Courses from '../Components/Pages/Courses';
-import Faq from '../Components/Pages/Faq';
+import Blogs from '../Components/Blogs/Blogs';
+import Courses from '../Components/Courses/Courses';
+import Faq from '../Components/Faq/Faq';
 import Home from '../Components/Pages/Home';
 import Layouts from '../Layouts/Layouts';
 
@@ -27,7 +27,7 @@ export const webrouter=createBrowserRouter([
             {
                 path:'/courses',
                 element:<Courses></Courses>
-            }
+            },
         ]
     }
 ])
