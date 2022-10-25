@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import HomeCart from './HomeCart';
-import { AiFillCaretDown, IconName } from "react-icons/ai";
+import { AiFillCaretDown } from "react-icons/ai";
 
 const Home = () => {
 

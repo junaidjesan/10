@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 
 const CourseCart = ({ data }) => {
     const { name, published_date } = data.author
-    const { image_url, title, enrolled, details } = data
+    const { image_url, title, enrolled, details,category_id } = data
     const { number, badge } = data.rating
-    console.log(data)
     return (
         <div className='grid justify-center my-5'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -37,7 +36,7 @@ const CourseCart = ({ data }) => {
                         </div>
                     </div>
                     <div className="card-actions justify-end mt-1">
-                        <Link to='/course-details'><div className="badge badge-outline">Details</div></Link>
+                        <Link to={`/details-cart/${data.id}`}><div className="badge badge-outline">Details</div></Link>
                         <Link to='/enrolled'><div className="badge badge-outline">Enroll Now</div></Link>
                     </div>
                 </div>

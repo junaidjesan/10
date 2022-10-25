@@ -18,8 +18,8 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li><Link to='/courses' className='text-pink-500 hover:border-b-slate-600'>Courses</Link></li>
-                        <li><Link to='/blogs' className='text-pink-500 hover:border-b-slate-600'>FAQ</Link></li>
-                        <li><Link to='/faq-questions' className='text-pink-500 hover:border-b-slate-600'>Blogs</Link></li>
+                        <li><Link to='/faq-questions' className='text-pink-500 hover:border-b-slate-600'>FAQ</Link></li>
+                        <li><Link to='/blogs' className='text-pink-500 hover:border-b-slate-600'>Blogs</Link></li>
                         
                     </ul>
                 </div>

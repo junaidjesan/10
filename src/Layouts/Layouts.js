@@ -2,12 +2,22 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Components/Footer/Footer';
 import Header from '../Components/Header/Header';
+import Details from '../Components/Pages/Details';
 
 const Layouts = () => {
     return (
         <div className=''>
             <Header></Header>
-            <Outlet></Outlet>
+            <>
+                <div className='flex'>
+                    <div className='d-none w-3/12 d-lg-block border-r-4 shadow-r-lg border-r-pink-800'>
+                        <Details></Details>
+                    </div>
+                    <div className="w-9/12">
+                        <Outlet></Outlet>
+                    </div>
+                </div>
+            </>
             <Footer></Footer>
         </div>
     );
