@@ -2,11 +2,16 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import HomeCart from './HomeCart';
 import { AiFillCaretDown } from "react-icons/ai";
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/Context';
 
 const Home = () => {
 
     const loaderData = useLoaderData()
     const dataSlice = loaderData.slice(1, 5)
+
+    const value=useContext(AuthContext)
+    console.log(value)
 
     return (
         <div>

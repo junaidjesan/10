@@ -19,7 +19,7 @@ export const webrouter=createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=>fetch('http://localhost:5000/all-categories')
+                loader:()=>fetch('https://api-pied-seven.vercel.app/all-categories')
             },
             {
                 path:'/blogs',
@@ -32,7 +32,7 @@ export const webrouter=createBrowserRouter([
             {
                 path:'/courses',
                 element:<Courses></Courses>,
-                loader:()=>fetch('http://localhost:5000/all-categories')
+                loader:()=>fetch('https://api-pied-seven.vercel.app/all-categories')
             },
             {
                 path:'/register',
@@ -49,7 +49,7 @@ export const webrouter=createBrowserRouter([
             {  
                 path:'/all-categories/:id',
                 element:<DetailsCart></DetailsCart>,
-                loader:({params})=>fetch(`http://localhost:5000/all-categories/${params.id}`)
+                loader:({params})=>fetch(`https://api-pied-seven.vercel.app/all-categories/${params.id}`)
             },
         ]
     },

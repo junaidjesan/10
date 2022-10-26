@@ -6,11 +6,10 @@ import { Link } from 'react-router-dom';
 const Details = ( ) => {
     const [detailsData,setDetailsData]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/all-categories')
+        fetch('https://api-pied-seven.vercel.app/all-categories')
         .then(res=>res.json())
         .then(data=>setDetailsData(data))
     },[])
-    console.log(detailsData)
     return (
         <div>
             {

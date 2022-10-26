@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IconName,BiFace } from "react-icons/bi";
+import { BiFace } from "react-icons/bi";
 
 const Header = () => {
     return (
