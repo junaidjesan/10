@@ -8,8 +8,12 @@ const LogInPage = () => {
 
     const {SignInUser}=useContext(AuthContext)
 
-    const handleSignIn=()=>{
-        SignInUser()
+    const handleSignIn=event=>{
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        SignInUser(email,password)
         .then(res=>{
             const user=res.user
             console.log(user)
@@ -19,7 +23,7 @@ const LogInPage = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen ">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Sign In now!</h1>
@@ -31,13 +35,13 @@ const LogInPage = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                                <input type="text" required name='email' placeholder="email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password'  placeholder="password" className="input input-bordered" />
+                                <input type="password" required name='password'  placeholder="password" className="input input-bordered" />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>

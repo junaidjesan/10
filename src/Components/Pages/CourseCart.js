@@ -7,7 +7,7 @@ const CourseCart = ({ data }) => {
     const { image_url, title, enrolled, details} = data
     const { number, badge } = data.rating
     return (
-        <div className='grid justify-center my-5'>
+        <div className='grid justify-center mx-auto my-5'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <figure><img className='w-96 h-56' src={image_url} alt="Shoes" /></figure>
                 <div className="card-body">

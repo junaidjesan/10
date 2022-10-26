@@ -5,13 +5,14 @@ import { BsStarFill, BsStarHalf } from 'react-icons/bs'
 
 const DetailsCart = () => {
     const data = useLoaderData()
-    const { author, details, enrolled,thumbnail_url, title } = data
-    const { published_date ,name } = author
+    const { author, details, enrolled, thumbnail_url, title } = data
+    const { published_date, name } = author
+
 
     
 
     return (
-        <div>
+        <div className=''>
             <div className="tooltip tooltip-bottom" data-tip="click for download free file">
                 <h1 className=' border-2 my-8 mx-auto hover:shadow-md px-4 w-80'>{name}</h1>
             </div>

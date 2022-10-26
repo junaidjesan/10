@@ -2,19 +2,18 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/Context';
+import { BiUserCircle } from 'react-icons/bi'
 
 const Header = () => {
-    const [changeText,setChangeText]=useState(true)
+    const [changeText, setChangeText] = useState(true)
 
-    const handleTextChange=()=>{
+    const handleTextChange = () => {
         return setChangeText(!changeText)
     }
 
     const { SignOut, user } = useContext(AuthContext)
 
-    // const {photoURL}=user
-    // console.log(user)
-    // console.log(photoURL)
+    console.log(user)
 
     const handleSignOut = () => {
         SignOut()
@@ -36,27 +35,32 @@ const Header = () => {
                     <span className=" text-3xl text-pink-800 italic oldstyle-nums font-semibold"><Link to='/'>Engineer's School</Link></span>
                 </div>
                 <div className='flex gap-3 '>
-                    <button onClick={()=>handleTextChange()}><input type="checkbox" className="toggle mt-2" /></button>
-                    {!changeText ? "dark":"light"}
+                    <button onClick={() => handleTextChange()}><input type="checkbox" className="toggle mt-2" /></button>
+                    {!changeText ? "dark" : "light"}
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0">
-                        <li><Link to='/courses' className='text-pink-500 hover:border-b-slate-600'>Courses</Link></li>
-                        <li><Link to='/faq-questions' className='text-pink-500 hover:border-b-slate-600'>FAQ</Link></li>
-                        <li><Link to='/blogs' className='text-pink-500 hover:border-b-slate-600'>Blogs</Link></li>
+                <div className='flex lg:gap-20'>
+                    <div className="navbar-center hidden lg:flex">
+                        <ul className="menu menu-horizontal p-0">
+                            <li><Link to='/courses' className='text-pink-500 hover:border-b-slate-600'>Courses</Link></li>
+                            <li><Link to='/faq-questions' className='text-pink-500 hover:border-b-slate-600'>FAQ</Link></li>
+                            <li><Link to='/blogs' className='text-pink-500 hover:border-b-slate-600'>Blogs</Link></li>
 
-                    </ul>
-                </div>
-                <div className="navbar-end gap-5">
-                    {/* {(user.uid)?
-                     <div className='h-8 w-8'><img src={photoURL} alt="" /></div>:
-                     <BiUserCircle className='h-8 w-8 text-pink-900' />
-                    } */}
-                    {user ?
-                        <button onClick={handleSignOut} className='text-pink-700'><Link to='/register'>Log Out</Link></button>
-                        :
-                        <button className='text-pink-700'><Link to='/logIn'>Sign In</Link></button>
-                    }
+                        </ul>
+                    </div>
+                    <div className=''>
+                        {
+                            user ?
+                                <div className="flex gap-5">
+                                    <h1 className='tooltip tooltip-left' data-tip={user.displayName}><img className='h-8 w-8 rounded-xl' src={user.photoURL} alt="" /></h1>
+                                    <button onClick={handleSignOut} className='text-pink-700'><Link to='/register'>LogOut</Link></button>
+                                </div>
+                                :
+                                <div className='flex  gap-5'>
+                                    <BiUserCircle className='h-8 w-8 text-pink-900' />
+                                    <button className='text-pink-700'><Link to='/logIn'>SignIn</Link></button>
+                                </div>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

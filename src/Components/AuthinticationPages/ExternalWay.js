@@ -11,8 +11,10 @@ const ExternalWay = () => {
 
     const handleGoogleClick=()=>{
           GoogleSignIn()
-          .then(res=>{const user=res.user})
-                .catch(er=>{})
+          .then(res=>{
+            const user=res.user
+            console.log(user)})
+          .catch(er=>{})
     }
 
     const handleGithubClick=()=>{

@@ -53,14 +53,14 @@ const Home = () => {
             </div>
 
             <div className='flex justify-center my-10'>
-                <div className='grid grid-cols-2'>
+                <div className='grid lg:grid-cols-2'>
                     <img className='h-28 shadow-sm rounded w-48 m-5' src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" />
                     <img className='h-28 shadow-sm rounded w-48 m-5' src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" />
 
                     <img className='h-28 shadow-sm rounded w-48 m-5' src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" />
                     <img className='h-28 shadow-sm rounded w-48 m-5' src="https://images.unsplash.com/photo-1612521564381-8b0d19cc4951?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80" alt="" />
                 </div>
-                <div className='grid grid-cols-2'>
+                <div className='grid lg:grid-cols-2'>
                     <span className='m-5 text-3xl hover:text-pink-600 flex justify-center items-center'>physics</span>
                     <span className='m-5 text-3xl hover:text-pink-600 flex justify-center items-center'>Math</span>
                     <span className='m-5 text-3xl hover:text-pink-600 flex justify-center items-center'>Python</span>
@@ -75,7 +75,7 @@ const Home = () => {
                     <h1 className="text-3xl text-pink-800 grid justify-center">Best Courses Fou You</h1>
                     <h1 className='grid justify-center'>Go forward to see all the courses</h1>
                 </div>
-                <div className='grid grid-cols-2 gap-6'>
+                <div className='grid lg:grid-cols-2 gap-6'>
                     {
                         dataSlice.map(data => <HomeCart key={data.id} data={data}></HomeCart>)
                     }

@@ -11,7 +11,7 @@ const Details = ( ) => {
         .then(data=>setDetailsData(data))
     },[])
     return (
-        <div>
+        <div className='w-12/12'>
             {
                 detailsData.map(data=> <p className=' grid justify-around' key={data.id}><Link className='gap-10 my-5 py-3 px-4 shadow-md' to={`/all-categories/${data.id}`}>{data.title}</Link></p>)
             }

@@ -9,11 +9,11 @@ const Layouts = () => {
         <div className=''>
             <Header></Header>
             <>
-                <div className='flex'>
-                    <div className='d-none w-3/12 d-lg-block border-r-4 shadow-r-lg border-r-pink-800'>
+                <div className='lg:flex'>
+                    <div className='d-none lg:w-3/12 d-lg-block lg:border-r-4 lg:border-r-pink-800'>
                         <Details></Details>
                     </div>
-                    <div className="w-9/12">
+                    <div className="lg:w-9/12 sm:flex mx-auto">
                         <Outlet></Outlet>
                     </div>
                 </div>

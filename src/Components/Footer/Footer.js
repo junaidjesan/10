@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className='bg-pink-200'>
             <div  className='bg-pink-200'>
-                <footer className="footer p-10  text-base-content">
+                <footer className="footer p-10 grid grid-cols-2 mx-auto lg:grid-cols-3  text-base-content">
                     <div>
                     <img className='h-40 rounded w-50' src="https://w7.pngwing.com/pngs/171/678/png-transparent-marwadi-university-mechanical-engineering-computer-icons-civil-engineering-engineer-people-laboratory-engineering-thumbnail.png" alt="" />
                         <p>Engineer's School Ltd.<br />Providing reliable tech since 1992 <br /> we has a successful journey</p>
