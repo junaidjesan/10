@@ -6,10 +6,12 @@ import { BsStarFill, BsStarHalf } from 'react-icons/bs'
 const DetailsCart = () => {
     const data = useLoaderData()
     const { author, details, enrolled, rating, thumbnail_url, title } = data
-    const { published_date, } = author
-    const { number, badge } = rating
+    const { published_date,name } = author
     return (
         <div>
+            <div className="tooltip tooltip-bottom" data-tip="click for download free file">
+                <h1 className=' border-2 my-8 hover:shadow-md px-4 w-20'>{name}</h1>
+            </div>
             <div>
                 <img className='w-full h-80 shadow-md' src={thumbnail_url} alt="" />
             </div>
@@ -25,7 +27,7 @@ const DetailsCart = () => {
                         <h1 className='flex gap-1'><BsStarFill /><BsStarFill /><BsStarFill /><BsStarFill /><BsStarHalf /></h1>
                     </div>
                     <div>
-                        <Link to='/enrolled'><button className='btn btn-outline btn-primary'>Enroll Now</button></Link>
+                        <Link to={`/enrolled/${data.id}`}><button className='btn btn-outline btn-primary'>Get premium access</button></Link>
                     </div>
                 </div>
             </div>

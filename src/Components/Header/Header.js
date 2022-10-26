@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BiFace } from "react-icons/bi";
+import { BiFace, BiUserCircle } from "react-icons/bi";
+import { AiOutlineUser } from "react-icons/ai";
 
 const Header = () => {
     return (
@@ -24,7 +25,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-5">
-                    <BiFace className='h-8 w-8 text-pink-900' />
+                    <BiUserCircle className='h-8 w-8 text-pink-900' />
                     <button className='text-pink-700'><Link to='/register'>Register</Link></button>
                 </div>
             </div>

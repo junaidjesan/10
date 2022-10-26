@@ -37,7 +37,7 @@ const CourseCart = ({ data }) => {
                     </div>
                     <div className="card-actions justify-end mt-1">
                         <Link to={`/all-categories/${data.id}`}><div className="badge badge-outline">Details</div></Link>
-                        <Link to='/enrolled'><div className="badge badge-outline">Enroll Now</div></Link>
+                        <Link to={`/enrolled/${data.id}`}><div className="badge badge-outline">Get premium access</div></Link>
                     </div>
                 </div>
             </div>

@@ -43,8 +43,9 @@ export const webrouter=createBrowserRouter([
                 element:<LogInPage></LogInPage>
             },
             {
-                path:'/enrolled',
-                element:<Enroll></Enroll>
+                path:'/enrolled/:id',
+                element:<Enroll></Enroll>,
+                loader:({params})=>fetch(`https://api-pied-seven.vercel.app/all-categories/${params.id}`)
             },
             {  
                 path:'/all-categories/:id',

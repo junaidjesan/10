@@ -15,7 +15,7 @@ const HomeCart = ({ data }) => {
                     <h2 className="card-title">{name}</h2>
                     <p>{detailSlice}</p>
                     <div className="card-actions">
-                        <Link to='/courses'><button className="btn btn-outline hover:shadow-purple-200 btn-primary">Buy Now</button></Link>
+                        <Link to={`/enrolled/${data.id}`}><button className="btn btn-outline hover:shadow-purple-200 btn-primary">Get premium access</button></Link>
                     </div>
                 </div>
             </div>
