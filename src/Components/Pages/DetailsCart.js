@@ -10,7 +10,7 @@ const DetailsCart = () => {
     return (
         <div>
             <div className="tooltip tooltip-bottom" data-tip="click for download free file">
-                <h1 className=' border-2 my-8 hover:shadow-md px-4 w-20'>{name}</h1>
+                <h1 className=' border-2 my-8 mx-auto hover:shadow-md px-4 w-80'>{name}</h1>
             </div>
             <div>
                 <img className='w-full h-80 shadow-md' src={thumbnail_url} alt="" />

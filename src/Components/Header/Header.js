@@ -2,8 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BiFace, BiUserCircle } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/Context';
 
 const Header = () => {
+
+    const {SignOut,user}=useContext(AuthContext)
+
+    // const {photoURL}=user
+    // console.log(user)
+    // console.log(photoURL)
+
+    const handleSignOut=()=>{
+        SignOut()
+        .then(res=>{})
+        .catch(er=>{})
+    }
+
+
     return (
         <div className=''>
             <div className="navbar bg-base-100 px-6 border-b-4 border-b-pink-800">
@@ -25,8 +41,15 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-5">
-                    <BiUserCircle className='h-8 w-8 text-pink-900' />
-                    <button className='text-pink-700'><Link to='/register'>Register</Link></button>
+                    {/* {(user.uid)?
+                     <div className='h-8 w-8'><img src={photoURL} alt="" /></div>:
+                     <BiUserCircle className='h-8 w-8 text-pink-900' />
+                    } */}
+                    {user?
+                     <button onClick={handleSignOut} className='text-pink-700'><Link to='/register'>Log Out</Link></button>
+                     :
+                     <button className='text-pink-700'><Link to='/logIn'>Sign In</Link></button>
+                    }
                 </div>
             </div>
         </div>

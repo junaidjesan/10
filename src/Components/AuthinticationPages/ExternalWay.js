@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/Context';
 
 const ExternalWay = () => {
 
-    const {GoogleSignIn}=useContext(AuthContext)
+    const {GoogleSignIn,GithubSignIn,FacebookSignIn}=useContext(AuthContext)
 
 
     const handleGoogleClick=()=>{
@@ -15,11 +15,23 @@ const ExternalWay = () => {
                 .catch(er=>{})
     }
 
+    const handleGithubClick=()=>{
+        GithubSignIn()
+        .then(res=>{})
+        .catch(er=>{})
+    }
+
+    const handleFacebookClick=()=>{
+        FacebookSignIn()
+        .then(res=>{})
+        .catch(er=>{})
+    }
+
     return (
         <div className='flex gap-5 justify-center py-4'>
             <div><Link onClick={handleGoogleClick}><BsGoogle className='h-6 w-8'/></Link></div>
-            <div><BsGithub className='h-6 w-8'/></div>
-            <div><BsFacebook className='h-6 w-8'/></div>
+            <div><Link onClick={handleGithubClick}><BsGithub className='h-6 w-8'/></Link></div>
+            <div><Link onClick={handleFacebookClick}><BsFacebook className='h-6 w-8'/></Link></div>
         </div>
     );
 };

@@ -1,8 +1,31 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/Context';
 import ExternalWay from './ExternalWay';
 
 const RegisterPage = () => {
+    const {CreateUser}=useContext(AuthContext)
+
+    const [registerError,setRegisterError]=useState([])
+    console.log(registerError)
+
+    const handleRegisterSubmition=event=>{
+        const form = event.target;
+        const name = form.name.value;
+        // const photoURL = form.photoURL.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        CreateUser(email,password)
+        .then(res=>{
+            const user=res.user
+            console.log(user)
+        })
+        .catch(er=>{setRegisterError(er)})
+    }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -12,7 +35,7 @@ const RegisterPage = () => {
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda <br /> excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleRegisterSubmition} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -23,7 +46,7 @@ const RegisterPage = () => {
                                 <label className="label">
                                     <span className="label-text">Image Link</span>
                                 </label>
-                                <input type="url" name='img-link' placeholder="https://" className="input input-bordered" />
+                                <input type="url" name='url' placeholder="https://" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -40,7 +63,8 @@ const RegisterPage = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
-                            <div>if already have account <Link className='text-pink-500' to='/logIn'>log in </Link> now</div>
+                            <h1>{registerError.message}</h1>
+                            <div className='text-sm'>if already have account <Link className='text-pink-500' to='/logIn'>log in </Link> now</div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary btn-outline">Register</button>
                             </div>
