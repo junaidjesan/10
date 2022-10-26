@@ -9,6 +9,7 @@ import DetailsCart from '../Components/Pages/DetailsCart';
 import Enroll from '../Components/Pages/Enroll';
 import Home from '../Components/Pages/Home';
 import Layouts from '../Layouts/Layouts';
+import PrivetRout from './PrivetRout';
 import Rout404 from './Rout404';
 
 export const webrouter=createBrowserRouter([
@@ -44,7 +45,7 @@ export const webrouter=createBrowserRouter([
             },
             {
                 path:'/enrolled/:id',
-                element:<Enroll></Enroll>,
+                element:<PrivetRout><Enroll></Enroll></PrivetRout>,
                 loader:({params})=>fetch(`https://api-pied-seven.vercel.app/all-categories/${params.id}`)
             },
             {  
