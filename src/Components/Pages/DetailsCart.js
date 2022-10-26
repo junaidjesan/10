@@ -5,8 +5,11 @@ import { BsStarFill, BsStarHalf } from 'react-icons/bs'
 
 const DetailsCart = () => {
     const data = useLoaderData()
-    const { author, details, enrolled, rating, thumbnail_url, title } = data
-    const { published_date,name } = author
+    const { author, details, enrolled,thumbnail_url, title } = data
+    const { published_date ,name } = author
+
+    
+
     return (
         <div>
             <div className="tooltip tooltip-bottom" data-tip="click for download free file">
