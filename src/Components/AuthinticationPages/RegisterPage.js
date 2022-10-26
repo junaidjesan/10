@@ -9,7 +9,7 @@ import ExternalWay from './ExternalWay';
 const RegisterPage = () => {
     const {CreateUser}=useContext(AuthContext)
 
-    const [registerError,setRegisterError]=useState([])
+    const [registerError,setRegisterError]=useState('')
     console.log(registerError)
 
     const handleRegisterSubmition=event=>{
@@ -19,12 +19,13 @@ const RegisterPage = () => {
         // const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+        form.reset()
         CreateUser(email,password)
         .then(res=>{
             const user=res.user
-            console.log(user)
+            setRegisterError('')
         })
-        .catch(er=>{setRegisterError(er)})
+        .catch(er=>{setRegisterError(er.message)})
     }
 
     return (
@@ -64,8 +65,8 @@ const RegisterPage = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
-                            <h1>{registerError.message}</h1>
-                            <div className='text-sm'>if already have account <Link className='text-pink-500' to='/logIn'>log in </Link> now</div>
+                            <div className='text-sm'>if already have account <Link className='text-blue-700' to='/logIn'>log in </Link> now</div>
+                            <h1 className='text-red-500'>{registerError}</h1>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary btn-outline">Register</button>
                             </div>

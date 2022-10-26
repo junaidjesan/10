@@ -4,7 +4,7 @@ import { ImFacebook, ImGoogle3, ImTwitter } from 'react-icons/im'
 
 const Footer = () => {
     return (
-        <div className='bg-pink-200'>
+        <div className='bg-pink-200 '>
             <div  className='bg-pink-200'>
                 <footer className="footer p-10 grid grid-cols-2 mx-auto lg:grid-cols-3  text-base-content">
                     <div>

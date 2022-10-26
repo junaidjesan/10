@@ -1,10 +1,14 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/Context';
 import ExternalWay from './ExternalWay';
 
 const LogInPage = () => {
+    const [logInError,setLogInError]=useState('')
+    console.log(logInError)
+    const navigate=useNavigate()
 
     const {SignInUser}=useContext(AuthContext)
 
@@ -13,12 +17,17 @@ const LogInPage = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        form.reset()
         SignInUser(email,password)
         .then(res=>{
             const user=res.user
             console.log(user)
+            setLogInError('')
+            navigate('/')
         })
-        .catch(er=>{})
+        .catch(er=>{
+            setLogInError(er.message)
+        })
     }
 
     return (
@@ -46,7 +55,8 @@ const LogInPage = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
-                            <div>if already have account <Link className='text-pink-500' to='/register'>Register </Link> now</div>
+                            <div>if already have account <Link className='text-blue-700' to='/register'>Register </Link> now</div>
+                            <h1 className='text-red-500'>{logInError}</h1>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary btn-outline">Log In</button>
                             </div>
