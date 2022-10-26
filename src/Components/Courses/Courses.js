@@ -7,7 +7,7 @@ const Courses = () => {
     return (
         <div>
             <div className='grid justify-center my-5 text-pink-800 text-3xl'>
-                <h1 className=''>Best Courses Fou You</h1>
+                <h1 className=''>Collect Your Favorite's</h1>
             </div>
             <div className='grid grid-cols-2 my-10'>
                 {

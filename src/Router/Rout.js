@@ -1,9 +1,10 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import LogInPage from '../Components/AuthinticationPages/LogInPage';
+import RegisterPage from '../Components/AuthinticationPages/RegisterPage';
 import Blogs from '../Components/Blogs/Blogs';
 import Courses from '../Components/Courses/Courses';
 import Faq from '../Components/Faq/Faq';
-import Details from '../Components/Pages/Details';
 import DetailsCart from '../Components/Pages/DetailsCart';
 import Enroll from '../Components/Pages/Enroll';
 import Home from '../Components/Pages/Home';
@@ -33,17 +34,20 @@ export const webrouter=createBrowserRouter([
                 element:<Courses></Courses>,
                 loader:()=>fetch('http://localhost:5000/all-categories')
             },
-            // {
-            //     path:'/course-details',
-            //     element:<Details></Details>,
-            //     loader:()=>fetch(`http://localhost:5000/all-categories`),
-            // },
+            {
+                path:'/register',
+                element:<RegisterPage></RegisterPage>
+            },
+            {
+                path:'/logIn',
+                element:<LogInPage></LogInPage>
+            },
             {
                 path:'/enrolled',
                 element:<Enroll></Enroll>
             },
             {  
-                path:'/details-cart/:id',
+                path:'/all-categories/:id',
                 element:<DetailsCart></DetailsCart>,
                 loader:({params})=>fetch(`http://localhost:5000/all-categories/${params.id}`)
             },

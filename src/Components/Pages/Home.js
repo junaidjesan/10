@@ -67,7 +67,8 @@ const Home = () => {
 
             <div className='mt-10'>
                 <div>
-                    <h1 className="text-3xl text-pink-800 grid justify-center">Collect Your Favorite's</h1>
+                    <h1 className="text-3xl text-pink-800 grid justify-center">Best Courses Fou You</h1>
+                    <h1 className='grid justify-center'>Go forward to see all the courses</h1>
                 </div>
                 <div className='grid grid-cols-2 gap-6'>
                     {

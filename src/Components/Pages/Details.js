@@ -14,7 +14,7 @@ const Details = ( ) => {
     return (
         <div>
             {
-                detailsData.map(data=> <p className=' grid justify-around' key={data.id}><Link className='gap-10 my-5 py-3 px-4 shadow-md' to={`/details-cart/${data.id}`}>{data.title}</Link></p>)
+                detailsData.map(data=> <p className=' grid justify-around' key={data.id}><Link className='gap-10 my-5 py-3 px-4 shadow-md' to={`/all-categories/${data.id}`}>{data.title}</Link></p>)
             }
         </div>
     );
