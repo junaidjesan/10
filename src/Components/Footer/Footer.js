@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ImFacebook, ImGoogle3, ImTwitter } from 'react-icons/im'
+import logo from '../../BrandLogo/logo.png'
 
 const Footer = () => {
     return (
@@ -8,7 +9,7 @@ const Footer = () => {
             <div  className='bg-pink-200'>
                 <footer className="footer p-10 grid grid-cols-2 mx-auto lg:grid-cols-3  text-base-content">
                     <div>
-                    <img className='h-40 rounded w-50' src="https://w7.pngwing.com/pngs/171/678/png-transparent-marwadi-university-mechanical-engineering-computer-icons-civil-engineering-engineer-people-laboratory-engineering-thumbnail.png" alt="" />
+                    <img className='h-40 rounded w-50' src={logo} alt="" />
                         <p>Engineer's School Ltd.<br />Providing reliable tech since 1992 <br /> we has a successful journey</p>
                     </div>
                     <div>

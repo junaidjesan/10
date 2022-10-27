@@ -26,6 +26,7 @@ const Context = ({children}) => {
     }
 
     const SignInUser=(email,password)=>{
+        setLoading(true);
         return signInWithEmailAndPassword(auth,email,password)
     }
 
@@ -35,6 +36,7 @@ const Context = ({children}) => {
 
 
     const SignOut=()=>{
+        setLoading(true);
           return  signOut(auth)
     }
 
@@ -43,6 +45,7 @@ const Context = ({children}) => {
         const unsubscribe=onAuthStateChanged(auth,currentUser=>{
             console.log('user on state change',currentUser)
             setUser(currentUser)
+            setLoading(false)
         })
         return ()=>unsubscribe()
     },[])
@@ -62,7 +65,7 @@ const Context = ({children}) => {
 
 
 
-    const contextValue={GoogleSignIn,SignInUser,UpdateUserProfile,CreateUser,user,GithubSignIn,FacebookSignIn,SignOut}
+    const contextValue={GoogleSignIn,loading,SignInUser,UpdateUserProfile,CreateUser,user,GithubSignIn,FacebookSignIn,SignOut}
     return (
         <div>
             <AuthContext.Provider value={contextValue}>

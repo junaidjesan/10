@@ -28,7 +28,7 @@ const Blogs = () => {
                 <h1 className='w-11/12'>How does the private route work?</h1> <TbHandClick className='h-5 w-1/12'/>
                 </div>
                 <div className="collapse-content bg-primary text-primary-content peer-checked:bg-pink-100 peer-checked:text-pink-800 ">
-                    <p>hello</p>
+                    <p>The react private route component renders child components ( children ) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property</p>
                 </div>
             </div>
             <div className="collapse w-8/12 mx-auto my-5 shadow-md">
@@ -37,7 +37,7 @@ const Blogs = () => {
                 What is Node? How does Node work? <TbHandClick className='h-5 w-1/12'/>
                 </div>
                 <div className="collapse-content bg-primary text-primary-content peer-checked:bg-pink-100 peer-checked:text-pink-800 ">
-                    <p>hello</p>
+                    <p>Node. js is an open-source, cross-platform JavaScript runtime environment and library for running web applications outside the client's browser.Node allows developers to write JavaScript code that runs directly in a computer process itself instead of in a browserNode JS Web Server receives those requests and places them into a Queue</p>
                 </div>
             </div>
             

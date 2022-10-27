@@ -1,10 +1,14 @@
 import React from 'react';
 import { useContext } from 'react';
 import { BsFacebook, BsGithub, BsGoogle } from 'react-icons/bs'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Context/Context';
 
 const ExternalWay = () => {
+
+    const location=useLocation()
+
+    const from=location.state?.from?.pathname|| '/'
 
     const {GoogleSignIn,GithubSignIn,FacebookSignIn}=useContext(AuthContext)
 

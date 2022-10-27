@@ -10,10 +10,10 @@ const Layouts = () => {
             <Header></Header>
             <>
                 <div className='lg:flex'>
-                    <div className='d-none lg:w-3/12 d-lg-block lg:border-r-4 lg:border-r-pink-800'>
+                    <div className='d-none lg:w-3/12 d-lg-block hidden lg:border-r-4 lg:border-r-pink-800'>
                         <Details></Details>
                     </div>
-                    <div className="lg:w-9/12 sm:flex mx-auto">
+                    <div className="w-7/12 justify-center sm:flex mx-auto">
                         <Outlet></Outlet>
                     </div>
                 </div>
