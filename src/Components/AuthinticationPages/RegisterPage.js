@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -7,7 +6,7 @@ import { AuthContext } from '../../Context/Context';
 import ExternalWay from './ExternalWay';
 
 const RegisterPage = () => {
-    const {CreateUser}=useContext(AuthContext)
+    const {CreateUser,updateUserProfile}=useContext(AuthContext)
     const location=useLocation()
     const navigate=useNavigate()
     const form=location.state?.from?.pathname|| '/'
@@ -17,19 +16,35 @@ const RegisterPage = () => {
 
     const handleRegisterSubmition=event=>{
         event.preventDefault()
-        const form = event.target;
-        const name = form.name.value;
-        // const photoURL = form.photoURL.value;
-        const email = form.email.value;
-        const password = form.password.value;
-        form.reset()
+        const fm = event.target;
+        const name = fm.name.value;
+        if(name.length<10){
+            return  [...registerError,setRegisterError('type full name')]
+        }
+        const photoURL = fm.url.value;
+        const email = fm.email.value;
+        const password = fm.password.value;
+        fm.reset()
         CreateUser(email,password)
         .then(res=>{
-            const user=res.user
-            navigate(form,{replace:true})
             setRegisterError('')
+            navigate(form,{replace:true})
+            updateUserProfileData(name,photoURL)
         })
         .catch(er=>{setRegisterError(er.message)})
+    }
+
+    const updateUserProfileData=(name,photoURL)=>{
+        const profile={
+            displayName: name,
+            photoURL:photoURL,
+        }
+        updateUserProfile(profile)
+        .then(res=>{
+            const data=res.user
+            console.log(data)
+        })
+        .catch(er=>{})
     }
 
     return (
@@ -44,9 +59,9 @@ const RegisterPage = () => {
                         <form onSubmit={handleRegisterSubmition} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span className="label-text">Full Name</span>
                                 </label>
-                                <input type="text" required name='name' placeholder="name" className="input input-bordered" />
+                                <input type="text" required name='name' placeholder="type your full name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

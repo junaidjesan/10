@@ -10,22 +10,22 @@ const LogInPage = () => {
     const location=useLocation()
     const navigate=useNavigate()
 
-    const from=location.state?.from?.pathname|| '/'
+    const form=location.state?.from?.pathname|| '/'
 
     const {SignInUser}=useContext(AuthContext)
 
     const handleSignIn=event=>{
         event.preventDefault()
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        form.reset()
+        const fm = event.target;
+        const email = fm.email.value;
+        const password = fm.password.value;
+        fm.reset()
         SignInUser(email,password)
         .then(res=>{
             const user=res.user
-            console.log(user)
+            // console.log(user)
             setLogInError('')
-            navigate(from,{replace:true})
+            navigate(form,{replace:true})
         })
         .catch(er=>{
             setLogInError(er.message)
@@ -60,7 +60,7 @@ const LogInPage = () => {
                             <div>if already have account <Link className='text-blue-700' to='/register'>Register </Link> now</div>
                             <h1 className='text-red-500'>{logInError}</h1>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary btn-outline">Log In</button>
+                               <button className="btn btn-primary btn-outline">Log In</button>
                             </div>
                             <ExternalWay></ExternalWay>
                         </form>

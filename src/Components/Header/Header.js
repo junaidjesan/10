@@ -64,7 +64,7 @@ const Header = () => {
                     {
                         user ?
                             <div className="flex gap-5">
-                                <h1 className='tooltip tooltip-bottom' data-tip={user.displayName}><img className='h-8 w-8 rounded-xl' src={user.photoURL} alt="" /></h1>
+                                <h1 className='tooltip tooltip-left' data-tip={user.displayName}><img className='h-8 w-8 rounded-xl' src={user.photoURL} alt="" /></h1>
                                 <button onClick={handleSignOut} className='text-pink-700'><Link>LogOut</Link></button>
                             </div>
                             :

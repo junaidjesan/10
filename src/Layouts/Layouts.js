@@ -9,8 +9,8 @@ const Layouts = () => {
         <div className=''>
             <Header></Header>
             <>
-                <div className='lg:flex'>
-                    <div className=' w-3/12 d-lg-block md:flex hidden lg:border-r-4 lg:border-r-pink-800'>
+                <div className='md:flex'>
+                    <div className=' w-3/12 d-lg-block justify-center md:flex hidden md:border-r-4 md:border-r-pink-800'>
                         <Details></Details>
                     </div>
                     <div className="w-7/12 justify-center sm:flex mx-auto">

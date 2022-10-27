@@ -42,12 +42,12 @@ const Context = ({children}) => {
 
 
     useEffect(()=>{
-        const unsubscribe=onAuthStateChanged(auth,currentUser=>{
-            console.log('user on state change',currentUser)
+        const unsubscribe=onAuthStateChanged(auth,(currentUser)=>{
             setUser(currentUser)
             setLoading(false)
+            console.log(currentUser)
         })
-        return ()=>unsubscribe()
+        return ()=>{unsubscribe()}
     },[])
 
 
@@ -64,8 +64,12 @@ const Context = ({children}) => {
     }
 
 
+    const updateUserProfile=(profile)=>{
+        return updateProfile(auth.currentUser,profile)
+    }
 
-    const contextValue={GoogleSignIn,loading,SignInUser,UpdateUserProfile,CreateUser,user,GithubSignIn,FacebookSignIn,SignOut}
+
+    const contextValue={GoogleSignIn,updateUserProfile,loading,SignInUser,UpdateUserProfile,CreateUser,user,GithubSignIn,FacebookSignIn,SignOut}
     return (
         <div>
             <AuthContext.Provider value={contextValue}>
