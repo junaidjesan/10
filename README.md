@@ -14,14 +14,15 @@ This website build in the most simple way and this website is too easy to contro
 I would like to call them as a helpers and they are.\
 Because they help me in every way. to build this website  i used.\
 html-tailwindCss-daisyUi-react-reactDom-firebase.\
-sometimes i needed to search for errors
+sometimes i needed to search for errors.\
+And i used Vs code to edit cods
 
 
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open https://engineers-school.web.app/ to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
