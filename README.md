@@ -14,7 +14,8 @@ This website build in the most simple way and this website is too easy to contro
 I would like to call them as a helpers and they are.\
 Because they help me in every way. to build this website  i used.\
 html-tailwindCss-daisyUi-react-reactDom-firebase.\
-sometimes i needed to search for errors
+sometimes i needed to search for errors.\
+And i used Vs code to edit cods
 
 
 
