@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/Context';
 import { BiUserCircle } from 'react-icons/bi'
@@ -9,6 +9,9 @@ import Details from '../Pages/Details';
 
 const Header = () => {
     const [changeText, setChangeText] = useState(true)
+    const location=useLocation()
+    const navigate=useNavigate()
+    const form=location.state?.from?.pathname|| '/'
 
     const handleTextChange = () => {
         return setChangeText(!changeText)
@@ -20,13 +23,27 @@ const Header = () => {
 
     const handleSignOut = () => {
         SignOut()
-            .then(res => { })
+            .then(res => {
+                navigate(form,{replace:true})
+            })
             .catch(er => { })
     }
 
 
     return (
-        <div className=''>
+        <div className='flex'>
+                <div className="dropdown md:hidden">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-12/12">
+                        
+                        <li><Link to='/courses'>Courses</Link></li>
+                        <li><Link to='/faq-questions'>FAQ</Link></li>
+                        <li><Link to='/blogs'>Blogs</Link></li>
+                    <Details></Details>
+                    </ul>
+                </div>
             <div className="navbar bg-base-100 px-6 border-b-4 border-b-pink-800">
                 <div className="navbar-start">
                     <img className='h-10 rounded w-14' src={logo} alt="" />
@@ -43,23 +60,12 @@ const Header = () => {
                         <li><Link to='/blogs' className=' text-pink-500 hover:border-b-slate-600'>Blogs</Link></li>
                     </ul>
                 </div>
-                <div className="dropdown md:hidden">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        
-                        <li><Link to='/courses'>Courses</Link></li>
-                        <li><Link to='/faq-questions'>FAQ</Link></li>
-                        <li><Link to='/blogs'>Blogs</Link></li>
-                    </ul>
-                </div>
                 <div className=''>
                     {
                         user ?
                             <div className="flex gap-5">
                                 <h1 className='tooltip tooltip-bottom' data-tip={user.displayName}><img className='h-8 w-8 rounded-xl' src={user.photoURL} alt="" /></h1>
-                                <button onClick={handleSignOut} className='text-pink-700'><Link >LogOut</Link></button>
+                                <button onClick={handleSignOut} className='text-pink-700'><Link>LogOut</Link></button>
                             </div>
                             :
                             <div className='flex  gap-5'>

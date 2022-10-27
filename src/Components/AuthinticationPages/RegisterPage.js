@@ -2,12 +2,15 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/Context';
 import ExternalWay from './ExternalWay';
 
 const RegisterPage = () => {
     const {CreateUser}=useContext(AuthContext)
+    const location=useLocation()
+    const navigate=useNavigate()
+    const form=location.state?.from?.pathname|| '/'
 
     const [registerError,setRegisterError]=useState('')
     console.log(registerError)
@@ -23,6 +26,7 @@ const RegisterPage = () => {
         CreateUser(email,password)
         .then(res=>{
             const user=res.user
+            navigate(form,{replace:true})
             setRegisterError('')
         })
         .catch(er=>{setRegisterError(er.message)})
