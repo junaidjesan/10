@@ -1,10 +1,22 @@
-# Getting Started with Create React App
+# Engineer's School
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `About this website`
 
-## Available Scripts
+Engineer's school mainly for the engineering student's who want better education on the simple way.\
+From the beginning our main goal is to give something and do something spacial for the students.\
+There has defferent typs of courses.\
+Those class taken by world's best teacher's.\
+This website build in the most simple way and this website is too easy to control.
 
-In the project directory, you can run:
+
+### `Web helpers`
+
+I would like to call them as a helpers and they are.\
+Because they help me in every way. to build this website  i used.\
+html-tailwindCss-daisyUi-react-reactDom-firebase.\
+sometimes i needed to search for errors
+
+
 
 ### `npm start`
 
