@@ -48,14 +48,14 @@ const RegisterPage = () => {
     }
 
     return (
-        <div>
-            <div className="hero min-h-screen">
-                <div className="hero-content flex-col ">
+        <div className=''>
+            <div className="md:hero mx-auto mb-6">
+                <div className="md:hero-content flex-col">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Register now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda <br /> excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <h1 className="md:text-5xl text-3xl font-bold">Register now!</h1>
+                        <p className="py-6 hidden md:flex">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda <br /> excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 md:w-full w-12/12 shadow-2xl bg-base-100">
                         <form onSubmit={handleRegisterSubmition} className="card-body">
                             <div className="form-control">
                                 <label className="label">
