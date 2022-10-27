@@ -13,7 +13,7 @@ const DetailsCart = () => {
         var doc = new jsPDF("p-8", "pt", "a2");
         doc.html(document.querySelector('#content'), {
             callback: function (pdf) {
-                pdf.save(`${name}.pdf`)
+                pdf.save(`${title}.pdf`)
             }
         })
     }
@@ -22,7 +22,7 @@ const DetailsCart = () => {
     return (
         <div>
             <div className="tooltip tooltip-bottom" data-tip="click for download free file">
-                <button onClick={generatPDF} type="primary"><h1 className=' border-2 my-8 mx-auto hover:shadow-md px-4 w-80'>{name}</h1></button>
+                <button onClick={generatPDF} type="primary"><h1 className=' border-2 my-8 mx-auto hover:shadow-md px-4 w-80'>{title}</h1></button>
             </div>
             <div className='mx-30' id='content'>
                 <div>

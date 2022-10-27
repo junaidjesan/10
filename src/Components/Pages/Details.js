@@ -13,7 +13,7 @@ const Details = ( ) => {
     return (
         <div className='lg:mt-8'>
             {
-                detailsData.map(data=> <p className=' gap-6 mb-8 h-8 ' key={data.id}><Link className='my-5  py-5 px-4 shadow-md' to={`/all-categories/${data.id}`}>{data.title}</Link></p>)
+                detailsData.map(data=> <p className=' gap-14 mb-16 h-8 ' key={data.id}><Link className='my-5 md:text-2xl text-x-sm  py-5 px-4 shadow-md' to={`/all-categories/${data.id}`}>{data.author.name}</Link></p>)
             }
         </div>
     );
